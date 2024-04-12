@@ -4,6 +4,7 @@ import random
 import numpy as np
 from tqdm import tqdm
 import os
+import random
 
 import requests
 
@@ -17,7 +18,7 @@ WORDS = response.content.splitlines()
 def _get_word_sequence(seed, n_words=2):
     """Get random word sequence seeding from from number."""
 
-    np.random.seed(seed)
+    random.seed(seed)
 
     words = [WORDS[random.randint(0, len(WORDS))].decode() for _ in range(n_words)]
 
